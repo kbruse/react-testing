@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Input extends Component {
+
+  constructor(props) {
+    super(props)
+  }
+
   render() {
-    const contents = this.props.succcess ? null : (
+    const contents = this.props.success ? null : (
       <form className="form-inline">
         <input
-          type="text"
           data-test="input-box"
+          type="text"
           className="mb-2 mx-sm-3"
           placeholder="enter guess"/>
         <button
-          type="submit"
           data-test="submit-button"
+          type="submit"
           className="btn btn-primary">Submit</button>
       </form>
     );
