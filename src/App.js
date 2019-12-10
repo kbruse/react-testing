@@ -7,7 +7,13 @@ import Congrats from './components/Congrats';
 import { getSecretWord } from './actions';
 import Input from './components/Input';
 
-class App extends Component {
+// renamed app to unconnectedApp to show explicitly that the class itself is not wrapped into connect
+// default export remains the component wrapped in connect
+export class UnconnectedApp extends Component {
+
+  componentDidMount() {
+    this.props.getSecretWord();
+  }
 
   render() {
     return (
@@ -26,4 +32,4 @@ const mapStateToProps = (state) => {
   return { success, guessedWords, secretWord };
 };
 
-export default connect(mapStateToProps, { getSecretWord })(App);
+export default connect(mapStateToProps, { getSecretWord })(UnconnectedApp);
