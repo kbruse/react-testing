@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+
+import { guessWord } from '../actions';
 
 class Input extends Component {
 
@@ -31,5 +33,5 @@ class Input extends Component {
 const mapStateToProps = ({ success }) => {
   return { success };
 };
-
-export default connect(mapStateToProps)(Input);
+//passed action creator as prop to component, no need for mapDispatchToProps
+export default connect(mapStateToProps, { guessWord })(Input);
