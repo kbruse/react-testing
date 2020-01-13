@@ -8,7 +8,7 @@ export class UnconnectedInput extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentGuess: null };
+    this.state = { currentGuess: '' };
   }
 
   submitGuessWord = (evt) => {
@@ -28,7 +28,7 @@ export class UnconnectedInput extends Component {
           data-test="input-box"
           type="text"
           className="mb-2 mx-sm-3"
-          value={this.state.currentGuess}
+          value={ this.state.currentGuess }
           onChange={(evt) => this.setState({ currentGuess: evt.target.value })}
           placeholder="enter guess"/>
         <button
