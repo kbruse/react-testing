@@ -28,18 +28,8 @@ describe('guessWord action dispatcher', () => {
     });
 
     test('updates state correctly for successful guess', () => {
-      store.dispatch(guessWord(secretWord));
-      const newState = store.getState();
-      const expectedState = {
-        secretWord,   // ...initialState
-        success: true,
-        guessedWords: [{
-          guessedWord: secretWord,
-          letterMatchCount: 5
-        }]
-      };
-      expect(newState).toEqual(expectedState);
-    });
+      // TODO
+    })
   });
 
   describe('some guessed words', () => {
@@ -63,14 +53,7 @@ describe('guessWord action dispatcher', () => {
     });
 
     test('updates state correctly for successful guess', () => {
-      store.dispatch(guessWord(secretWord));
-      const newState = store.getState();
-      const expectedState = {
-        secretWord,
-        success: true,
-        guessedWords: [...guessedWords, { guessedWord: secretWord, letterMatchCount: 5 }]
-      };
-      expect(newState).toEqual(expectedState);
+      // TODO
     });
   });
 });
